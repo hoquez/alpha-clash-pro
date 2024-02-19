@@ -21,6 +21,11 @@ function getTextElementValueById(elementId) {
   const value = parseInt(elementValueText);
   return value;
 }
+function getTextElementTextById(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.innerText;
+  return text;
+}
 
 function setTextElementValueById(elementId, value) {
   const element = document.getElementById(elementId);
@@ -46,4 +51,10 @@ function getRandomAlphabet() {
 function gameOver() {
   hideElementById("play-ground");
   showElementById("final-score");
+  //update final score
+  const lastScore = getTextElementValueById("current-score");
+  setTextElementValueById("game-score", lastScore);
+  //clear the last selected alphabet
+  const currentAlphabet = getTextElementTextById("current-alphabet");
+  removeBackgroundColorById(currentAlphabet);
 }
