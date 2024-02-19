@@ -11,13 +11,17 @@ function setBackgroundColorById(elementId) {
   const element = document.getElementById(elementId);
   element.classList.add("bg-orange-400");
 }
+function removeBackgroundColorById(elementId) {
+  const element = document.getElementById(elementId);
+  element.classList.remove("bg-orange-400");
+}
 
 function getRandomAlphabet() {
   //get an alphabet array
   const alphabetString = "abcdefghijklmnopqrstuvwxyz";
   const alphabets = alphabetString.split("");
   console.log(alphabets);
-  //get random index btwn 0 to 25
+  //get random index between 0 to 25
 
   const randomNumber = Math.random() * 25;
   const index = Math.round(randomNumber);
